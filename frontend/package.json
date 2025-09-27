@@ -1,0 +1,9 @@
+{
+  "dependencies": {
+    "element-plus": "^2.9.7",
+    "gsap": "^3.12.7",
+    "lottie-miniprogram": "^1.0.12",
+    "lottie-web": "^5.12.2",
+    "showdown": "^2.1.0"
+  }
+}
