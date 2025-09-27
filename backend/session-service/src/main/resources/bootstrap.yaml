@@ -1,0 +1,42 @@
+spring:
+  profiles:
+    active: docker
+  application:
+    name: session-service #微服务名称
+  cloud:
+    nacos:
+      config:
+        enabled: true
+        file-extension: yaml
+        shared-configs:
+          - data-id: shared-mybatis-plus.yaml
+#            group: DA
+            refresh: true
+          - data-id: shared-mysql.yaml
+            refresh: true
+          - data-id: shared-log.yaml
+            refresh: true
+
+---
+spring:
+  cloud:
+    nacos:
+      server-addr: 192.168.32.128:8848
+#      discovery:
+#        metadata:
+#          secure: true
+  config:
+    activate:
+      on-profile: dev
+
+---
+spring:
+  cloud:
+    nacos:
+      server-addr: 8.137.127.137:8848
+#      discovery:
+#        metadata:
+#          secure: true
+  config:
+    activate:
+      on-profile: docker

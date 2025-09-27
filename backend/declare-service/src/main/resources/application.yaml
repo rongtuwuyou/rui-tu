@@ -1,0 +1,47 @@
+server:
+  port: 8082
+  tomcat:
+    uri-encoding: UTF-8
+    connection-timeout: 30000
+
+spring:
+  #  application:
+  #    name: object-storage-service
+  #  profiles:
+  #    active: dev
+  servlet:
+    multipart:
+      max-file-size: 100MB
+      max-request-size: 150MB
+  minio:
+    endpoint: ${dwy.minio.endpoint}
+    accesskey: ${dwy.minio.accesskey}
+    secretKey: ${dwy.minio.secretKey}
+
+#  datasource:
+#    url: jdbc:mysql://${dwy.db.mysql.host}:${dwy.db.mysql.port}/${dwy.db.mysql.database}?useUnicode=true&characterEncoding=UTF-8&autoReconnect=true&serverTimezone=Asia/Shanghai
+#    driver-class-name: com.mysql.cj.jdbc.Driver
+#    username: ${dwy.db.mysql.user}
+#    password: ${dwy.db.mysql.pw}
+
+#mybatis-plus:
+#  configuration:
+#    default-enum-type-handler: com.baomidou.mybatisplus.core.handlers.MybatisEnumTypeHandler
+#    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl #开启sql日志
+#  global-config:
+#    db-config:
+#      update-strategy: not_null
+#      id-type: auto
+
+dwy:
+  db:
+    mysql:
+      host: ${dwy.db.mysql.host}
+      port: ${dwy.db.mysql.port}
+      user: ${dwy.db.mysql.user}
+      pw: ${dwy.db.mysql.pw}
+      database: ${dwy.db.mysql.database}
+  minio:
+    endpoint: ${dwy.minio.endpoint}
+    accesskey: ${dwy.minio.accesskey}
+    secretKey: ${dwy.minio.secretKey}
